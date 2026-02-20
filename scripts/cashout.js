@@ -1,13 +1,13 @@
 document.getElementById('btn-withdraw')
 .addEventListener('click', function(){
-    const agentNumber = getValueFromInput('input-cashout-number');
+    const agentNumber = getValueFromInput(input-cashout-number);
 
     if (agentNumber.length != 11){
         alert('Invalid Agent Number');
         return;
     }
 
-    const amount = getValueFromInput('input-cashout-amount');
+    const amount = getValueFromInput(input-cashout-amount);
 
     const balanceElement = document.getElementById('balance');
     const currentBalance = balanceElement.innerText;
