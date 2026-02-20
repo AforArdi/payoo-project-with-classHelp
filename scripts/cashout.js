@@ -1,15 +1,13 @@
 document.getElementById('btn-withdraw')
 .addEventListener('click', function(){
-    const agentInput = document.getElementById('input-cashout-number');
-    const agentNumber = agentInput.value;
+    const agentNumber = getValueFromInput('input-cashout-number');
 
-    if (agentInput.length != 11){
+    if (agentNumber.length != 11){
         alert('Invalid Agent Number');
         return;
     }
 
-    const amountInput = document.getElementById('input-cashout-amount');
-    const amount = amountInput.value;
+    const amount = getValueFromInput('input-cashout-amount');
 
     const balanceElement = document.getElementById('balance');
     const currentBalance = balanceElement.innerText;
@@ -22,8 +20,7 @@ document.getElementById('btn-withdraw')
         return;
     }
 
-    const passInput = document.getElementById('input-pass');
-    const pass = passInput.value;
+    const pass = getValueFromInput('input-pass');
 
     if (pass === '1234'){
         alert('Cashout Successful');
