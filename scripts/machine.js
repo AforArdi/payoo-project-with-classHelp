@@ -17,3 +17,17 @@ function setBalance(value){
     const balanceElement = document.getElementById('balance');
     balanceElement.innerText = value;
 }
+
+// machine: hide all, show only the selected id when specific btn is clicked
+function showOnly(id){
+    const addMoney = document.getElementById('add-money');
+    const cashout = document.getElementById('cashout');
+    const sendMoney = document.getElementById('send-money');
+
+    addMoney.classList.add('hidden');
+    cashout.classList.add('hidden');
+    sendMoney.classList.add('hidden');
+
+    const selectedId = document.getElementById(id);
+    selectedId.classList.remove('hidden');
+}

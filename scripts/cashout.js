@@ -12,7 +12,6 @@ document.getElementById('btn-withdraw')
     const currentBalance = getBalance();
 
     const newBalance = currentBalance - Number(amount);
-    console.log(newBalance);
 
     if (newBalance < 0){
         alert('Invalid Amount');
