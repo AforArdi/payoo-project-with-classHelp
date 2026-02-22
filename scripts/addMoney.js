@@ -21,6 +21,16 @@ document.getElementById('btn-add-money')
         alert(`Add Money Success from ${bankName}`);
         setBalance(newBalance);
 
+        // keeping transaction history
+        const historyParent = document.getElementById('history-container');
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+        <div class="bg-base-100 p-4 rounded-md">
+            ${amount} tk Add Money Success from ${bankName} at ${new Date()}
+        </div>
+        `;
+        historyParent.append(newHistory);
+
     }else{
         alert('Invalid Pin');
         return;

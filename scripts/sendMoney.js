@@ -21,6 +21,16 @@ document.getElementById('btn-send-money')
     if (pass == '1234'){
         alert(`Send Money to ${sendNumber} Successful`);
         setBalance(newBalance);
+
+        // keeping transaction history
+        const historyParent = document.getElementById('history-container');
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+        <div class="bg-base-100 p-4 rounded-md">
+            ${sendMoneyAmount} tk Send Money Success to ${sendNumber} at ${new Date()}
+        </div>
+        `;
+        historyParent.append(newHistory);
     }else{
         alert('Invalid Pin');
         return;
