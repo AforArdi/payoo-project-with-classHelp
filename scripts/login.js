@@ -13,4 +13,4 @@ document.getElementById('btn-login')
         alert('login failed');
         return;
     }
-})
+});
