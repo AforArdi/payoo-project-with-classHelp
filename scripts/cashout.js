@@ -9,10 +9,9 @@ document.getElementById('btn-withdraw')
 
     const amount = getValueFromInput('input-cashout-amount');
 
-    const balanceElement = document.getElementById('balance');
-    const currentBalance = balanceElement.innerText;
+    const currentBalance = getBalance();
 
-    const newBalance = Number(currentBalance) - Number(amount);
+    const newBalance = currentBalance - Number(amount);
     console.log(newBalance);
 
     if (newBalance < 0){
@@ -24,7 +23,7 @@ document.getElementById('btn-withdraw')
 
     if (pass === '1234'){
         alert('Cashout Successful');
-        balanceElement.innerText = newBalance;
+        setBalance(newBalance);
     }else{
         alert('Invalid Pin');
         return;
