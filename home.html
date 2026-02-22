@@ -69,7 +69,7 @@
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </button>
-            <button class="btn btn-primary btn-soft flex-col h-full py-3">
+            <button onclick="showOnly('pay-bill')" class="btn btn-primary btn-soft flex-col h-full py-3">
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
@@ -163,6 +163,34 @@
         </div>
      </section>
 
+    <!-- pay bill -->
+    <section id="pay-bill" class="w-11/12 mx-auto py-6 hidden">
+        <h2 class="text-xl font-bold mb-3">Pay Bill</h2>
+        <div class="card bg-base-100 w-full shadow rounded-2xl">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label font-bold text-black text-[16px]">Select to Pay</label>
+                    <select id="pay-bill-selection" class="select bg-base-200 rounded-full w-full">
+                        <option disabled selected>Select Provider</option>
+                        <option value="Electricity">Electricity</option>
+                        <option value="WATER">Water</option>
+                        <option value="WIFI">Wifi</option>
+                    </select>
+                    <br>
+                    <label class="label font-bold text-black text-[16px]">Biller Account Number</label>
+                    <input id="pay-bill-account-number" type="text" class="input w-full rounded-full bg-base-200" minlength="11" maxlength="11" placeholder="Enter 11 digit account number" />
+                    <br>
+                    <label class="label font-bold text-black text-[16px]">Amount to Pay</label>
+                    <input id="pay-bill-amount" type="text" class="input w-full rounded-full bg-base-200" minlength="11" maxlength="11" placeholder="Add Amount to Pay" />
+                    <br>
+                    <label class="label font-bold text-black text-[16px]">Pin Number</label>
+                    <input id="pay-bill-pass" type="password" class="input w-full rounded-full bg-base-200" placeholder="Enter 4 digit pin number" />
+                    <button id="btn-pay-bill" class="btn btn-primary mt-4 rounded-full">Pay Now</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
     <!-- Transaction History -->
     <section id="history" class="w-11/12 mx-auto py-6 hidden">
         <h2 class="text-xl font-bold mb-3">Transactions</h2>
@@ -176,6 +204,7 @@
       <script src="./scripts/addMoney.js"></script>
       <script src="./scripts/sendMoney.js"></script>
       <script src="./scripts/bonus.js"></script>
+      <script src="./scripts/payBill.js"></script>
       <script src="./scripts/cashout.js"></script>
 </body>
 </html>
