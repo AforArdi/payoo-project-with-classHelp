@@ -6,6 +6,16 @@ document.getElementById('btn-get-bonus')
         alert(`Coupon Code Activated, ${couponAmount} added with to your Account`);
         const newBalance = getBalance() + couponAmount;
         setBalance(newBalance);
+
+        // keeping transaction history
+        const historyParent = document.getElementById('history-container');
+        const newHistory = document.createElement('div');
+        newHistory.innerHTML = `
+        <div class="bg-base-100 p-4 rounded-md">
+            ${couponAmount} tk bonus added at ${new Date()}
+        </div>
+        `;
+        historyParent.append(newHistory);
     }else{
         alert('Invalid Coupon Code');
         return;
